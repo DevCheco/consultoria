@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/style-login.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <title>Registrarse - Consultoría Empresarial</title>
+</head>
+<body>
+  <div class="register-container">
+    <div class="register-left">
+      <img src="/assets/img/logo.png" alt="Logo Consultoría" class="logo" />
+      <h2>¡Bienvenido!</h2>
+      <p>Regístrate para acceder a asesorías personalizadas como estudiante o emprendedor.</p>
+      <a href="/pages/login.html" class="btn-outline">Iniciar Sesión</a>
+    </div>
+
+    <div class="register-right">
+      <h2>Registro</h2>
+      <form id="registro-form">
+        <div class="input-group">
+          <input type="text" name="nombre" placeholder="Nombre completo" required />
+        </div>
+        <div class="input-group">
+          <input type="email" name="correo" placeholder="Correo electrónico" required />
+        </div>
+        <div class="input-group">
+          <input type="tel" name="telefono" placeholder="Número de teléfono" required />
+        </div>
+        <div class="input-group">
+          <select name="tipo_usuario" required>
+            <option value="">Tipo de usuario</option>
+            <option value="emprendedor">Emprendedor</option>
+            <option value="estudiante">Estudiante</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <select name="area" required>
+            <option value="">Área de interés</option>
+            <option value="finanzas">Finanzas</option>
+            <option value="contabilidad">Contabilidad</option>
+            <option value="emprendimiento">Emprendimiento</option>
+          </select>
+        </div>
+        <div class="input-group password-group">
+          <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required />
+          <i class="fas fa-eye toggle-password" onclick="togglePassword()"></i>
+        </div>
+        
+        <div class="options">
+          <label>
+            <input type="checkbox" name="acepta_datos" required />
+            Acepto el tratamiento de mis datos personales
+          </label>
+        </div>
+        <button type="submit" class="btn-register">Registrarse</button>
+        <p class="login-link">¿Ya tienes cuenta? <a href="/pages/login.html">Iniciar sesión</a></p>
+      </form>
+      
+    </div>
+  </div>
+ <!-- Incluye bcryptjs desde CDN -->
+ <script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+  import bcrypt from 'https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/+esm';
+
+  const supabase = createClient(
+    'https://bwonsfgmzwruecigklny.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ3b25zZmdtendydWVjaWdrbG55Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY0NjIyMjAsImV4cCI6MjA2MjAzODIyMH0.jGSFLeJeapdx6P5mpOCmgbucev7CTcxkS046Nvu9uA4'
+  );
+
+  let isSubmitting = false;
+
+document.getElementById('registro-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  if (isSubmitting) return;
+
+  isSubmitting = true;
+  const form = e.target;
+  const submitBtn = form.querySelector("button[type='submit']");
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Registrando...";
+
+  const nombre = form.nombre.value.trim();
+  const correo = form.correo.value.trim();
+  const telefono = form.telefono.value.trim();
+  const tipo_usuario = form.tipo_usuario.value;
+  const area = form.area.value;
+  const contrasena = form.contrasena.value;
+  const acepta_datos = form.acepta_datos.checked;
+
+  try {
+    const contrasena_encriptada = await bcrypt.hash(contrasena, 10);
+
+    const { error } = await supabase.from('users').insert([{
+      nombre,
+      correo,
+      telefono,
+      tipo_usuario,
+      area,
+      contrasena: contrasena_encriptada,
+      acepta_datos
+    }]);
+
+    if (error) {
+      alert('Error al registrar: ' + error.message);
+    } else {
+      alert('¡Registro exitoso!');
+      window.location.href = '/pages/login.html';
+    }
+  } catch (err) {
+    console.error("Error inesperado:", err);
+    alert("Error inesperado: " + err.message);
+  } finally {
+    isSubmitting = false;
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Registrarse";
+  }
+});
+
+
+</script>
+
+
+<script>
+  function togglePassword() {
+    const passwordInput = document.getElementById('contrasena');
+    const toggleIcon = document.querySelector('.toggle-password');
+
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      toggleIcon.classList.remove('fa-eye');
+      toggleIcon.classList.add('fa-eye-slash');
+    } else {
+      passwordInput.type = 'password';
+      toggleIcon.classList.remove('fa-eye-slash');
+      toggleIcon.classList.add('fa-eye');
+    }
+  }
+</script>
+
+
+</body>
+</html>

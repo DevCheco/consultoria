@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulos de Capacitación UNAD</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/styles-modulos.css">
+</head>
+<body>
+
+  <header class="encabezado">
+    <div class="encabezado__contenido">
+      <img src="/assets/img/logo.png" alt="Logo UNAD" class="logo">
+      <h1>Módulos de Capacitación</h1>
+    </div>
+    <i class="fas fa-sign-out-alt logout-icon" title="Cerrar sesión" id="cerrar-sesion"></i>
+  </header>
+  
+  
+
+  <section class="bienvenida">
+    <h2>Consultoría y asesoría financiera</h2>
+    <p>Un programa educativo diseñado para fortalecer los conocimientos financieros de nuestros estudiantes y emprendedores.</p>
+  </section>
+
+  <section class="modulos">
+    <div class="tarjeta">
+      <h3>Elaboración de Presupuestos</h3>
+      <p>Aprende a organizar tus finanzas personales y empresariales.</p>
+      <a href="/pages/modulo1.html" class="btn-ingresar1">Explorar Modulo</a>
+    </div>
+
+    <div class="tarjeta">
+      <h3>Costos y Punto de <br>Equilibrio</h3>
+      <p>Conoce tus costos reales y analiza la viabilidad de tu negocio.</p>
+      <a href="/pages/modulo2.html" class="btn-ingresar1">Explorar Modulo</a>
+    </div>
+
+    <div class="tarjeta">
+      <h3>Rentabilidad y Gestión del Endeudamiento</h3>
+      <p>Evalúa el retorno de tus inversiones y gestiona tus deudas.</p>
+      <a href="/pages/modulo3.html" class="btn-ingresar1">Explorar Modulo</a>
+    </div>
+
+    <div class="tarjeta">
+      <h3>Endeudamiento Responsable</h3>
+      <p>Desarrolla estrategias para un endeudamiento inteligente.</p>
+      <a href="/pages/modulo4.html" class="btn-ingresar1">Explorar Modulo</a>
+    </div>
+
+    <div class="contenedor-boton">
+      <a class="btn-ingresar2" target="_blank" href="http://208.78.220.113/Consultant">Acceder al Chat</a>
+    </div>
+    
+  </section>
+
+   <!-- Footer -->
+    <footer class="footer">
+    <div class="footer-column logo-section">
+      <img src="/assets/img/logo.png" alt="Logo Consultorías UNAD" />
+      <p>Apoyamos a estudiantes y emprendedores UNAD en su camino académico y empresarial.</p>
+    </div>
+  
+    <div class="footer-column">
+      <h4>Redes Sociales</h4>
+      <div class="social-icons">
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  
+    <div class="footer-column">
+      <h4>Contáctanos</h4>
+      <p>Email: <a href="mailto:consultoria.unad@gmail.com">consultoria.unad@gmail.com</a></p>
+      <p>Teléfono: <a href="tel:+57453343265">+57 314 543 4194</a></p>
+      <p>Atención: Lun-Vie 8:00am - 5:00pm</p>
+    </div>
+  
+    <div class="footer-column">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Política de privacidad</a></li>
+        <li><a href="#">Términos y condiciones</a></li>
+        <li><a href="#">Accesibilidad</a></li>
+      </ul>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>&copy; 2025 Consultorías UNAD | Todos los derechos reservados.</p>
+    </div>
+  </footer>
+<script>
+  document.getElementById('cerrar-sesion').addEventListener('click', () => {
+  // Aquí puedes limpiar datos de sesión y redirigir
+  alert('Cerrando sesión...');
+  window.location.href = '../index.html';
+});
+
+</script>
+</body>
+</html>

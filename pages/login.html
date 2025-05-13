@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar Sesión - Consultoría Empresarial</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/style-login.css" />
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-left">
+      <img src="/assets/img/logo.png" alt="Logo Consultoría" class="logo" />
+      <h2>¡Bienvenido de nuevo!</h2>
+      <p>Accede a tu cuenta para recibir asesoría personalizada como estudiante o emprendedor.</p>
+      <a href="/pages/register.html" class="btn-outline">Registrate</a>
+    </div>
+    
+    <div class="login-right">
+      <h2>Iniciar Sesión</h2>
+      <form id="login-form">
+        <div class="input-group">
+          <input type="email" name="correo" placeholder="Correo electrónico" required />
+        </div>
+        <div class="input-group password-group">
+          <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required />
+          <i class="fas fa-eye toggle-password" onclick="togglePassword()"></i>
+        </div>
+        <div class="options">
+          <label><input type="checkbox" /> Recuérdame</label>
+          <a href="#">¿Olvidaste tu contraseña?</a>
+        </div>
+        <button type="submit" class="btn-login">Ingresar</button>
+        <p class="signup-link">¿Eres nuevo? <a href="/pages/register.html">Crea una cuenta</a></p>
+      </form>
+      
+    </div>
+  </div>
+  <script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+import bcrypt from 'https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/+esm';
+
+const supabase = createClient(
+  'https://bwonsfgmzwruecigklny.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ3b25zZmdtendydWVjaWdrbG55Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY0NjIyMjAsImV4cCI6MjA2MjAzODIyMH0.jGSFLeJeapdx6P5mpOCmgbucev7CTcxkS046Nvu9uA4'
+ );
+
+document.getElementById('login-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const correo = e.target.correo.value.trim();
+  const contrasena = e.target.contrasena.value;
+
+  console.log('Correo ingresado:', correo); // Para depurar
+
+  const { data: usuario, error } = await supabase
+    .from('users')
+    .select('*')
+    .eq('correo', correo)
+    .maybeSingle();
+
+  if (error) {
+    console.error('Error al buscar el correo:', error);
+    alert('Error en la búsqueda: ' + error.message);
+    return;
+  }
+
+  if (!usuario) {
+    alert('Correo no encontrado');
+    return;
+  }
+
+  const match = await bcrypt.compare(contrasena, usuario.contrasena);
+
+  if (match) {
+    alert('¡Bienvenido, ' + usuario.nombre + '!');
+    window.location.href = '/pages/modulos.html';
+  } else {
+    alert('Contraseña incorrecta');
+  }
+});
+
+  </script>
+  
+  
+<script>
+  function togglePassword() {
+    const passwordInput = document.getElementById('contrasena');
+    const toggleIcon = document.querySelector('.toggle-password');
+
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      toggleIcon.classList.remove('fa-eye');
+      toggleIcon.classList.add('fa-eye-slash');
+    } else {
+      passwordInput.type = 'password';
+      toggleIcon.classList.remove('fa-eye-slash');
+      toggleIcon.classList.add('fa-eye');
+    }
+  }
+</script>
+  
+
+</body>
+</html>
+

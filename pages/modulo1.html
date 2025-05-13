@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Elaboración de Presupuestos</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/styles-modulos.css"/>
+</head>
+<body>
+
+  <header class="encabezado">
+    <img src="/assets/img/logo.png" alt="Logo UNAD" class="logo">
+    <h1>Elaboración de Presupuestos</h1>
+  </header>
+
+  <main class="modulo">
+    <section class="presupuesto-section">
+      <div class="container">
+        <h2 class="section-title"><i class="fas fa-bullseye"></i> Propósito</h2>
+        <p class="section-description">Desarrollar habilidades para planificar ingresos y egresos, asignar recursos y anticipar necesidades financieras del negocio.</p>
+      
+        <h2 class="section-title"><i class="fas fa-chart-pie"></i> Tipos de Presupuesto</h2>
+        <div class="card-grid">
+          <div class="card" data-modal="modal1">
+            <img src="/assets/img/presupuesto-personal.jpg" alt="Presupuesto Personal">
+            <h3>Presupuesto Personal</h3>
+            <p>Es la planificación financiera de los ingresos y gastos de una persona o familia. Permite controlar el dinero disponible, ahorrar y evitar el sobreendeudamiento.</p>
+          </div>
+          <div class="card" data-modal="modal2">
+            <img src="/assets/img/presupuesto-operativo.jpg" alt="Presupuesto Operativo">
+            <h3>Presupuesto Operativo</h3>
+            <p>Es utilizado por empresas para proyectar sus ingresos y gastos operativos durante un periodo determinado. Incluye costos de ventas, administración, marketing y logística.</p>
+          </div>
+          <div class="card" data-modal="modal3">
+            <img src="/assets/img/pressupuesto-inversion.jpg" alt="Presupuesto de Inversión">
+            <h3>Presupuesto de Inversión</h3>
+            <p>Se enfoca en la planificación de los gastos destinados a adquirir activos a largo plazo como maquinaria, tecnología o expansión.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Modales -->
+      <div class="modal" id="modal1">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3>Presupuesto Personal</h3>
+          <p>El presupuesto personal es una herramienta financiera que permite a una persona o 
+            familia planificar, controlar y evaluar sus ingresos y gastos. Su principal objetivo
+             es lograr un equilibrio entre lo que se gana y lo que se gasta, promoviendo el ahorro y
+              evitando el endeudamiento innecesario. Este tipo de presupuesto incluye categorías como 
+              alimentación, vivienda, transporte, educación, entretenimiento y ahorro. Al implementarlo 
+              de forma disciplinada, se pueden alcanzar metas a corto, mediano y largo plazo, como pagar 
+              deudas, adquirir bienes o asegurar una mejor calidad de vida. Además, ayuda a anticiparse a 
+              imprevistos económicos y a tomar decisiones financieras más responsables.</p>
+        </div>
+      </div>
+
+      <div class="modal" id="modal2">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3>Presupuesto Operativo</h3>
+          <p>El presupuesto operativo es una proyección detallada de los ingresos y gastos relacionados
+             con las actividades diarias de una empresa durante un periodo determinado, generalmente un año.
+              Su finalidad es asegurar que los recursos se utilicen eficientemente para alcanzar los objetivos
+               de producción, ventas y servicios. Este presupuesto incluye elementos como costos de ventas,
+                gastos administrativos, sueldos, materias primas, publicidad, mantenimiento y logística. 
+                Es clave para evaluar el rendimiento financiero, controlar costos, mejorar la rentabilidad 
+                y tomar decisiones estratégicas. Un presupuesto operativo bien estructurado permite anticipar
+                 desviaciones y establecer planes correctivos a tiempo.</p>
+        </div>
+      </div>
+      
+      <div class="modal" id="modal3">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3>Presupuesto de Inversión</h3>
+          <p>El presupuesto de inversión está orientado a planificar los recursos financieros que 
+            serán destinados a la adquisición de activos fijos o proyectos a largo plazo. Este tipo de 
+            presupuesto contempla inversiones en maquinaria, equipos, infraestructura, tecnología, expansión
+             de operaciones, investigación y desarrollo, entre otros. Su importancia radica en que estas 
+             inversiones generan beneficios futuros y aumentan la capacidad operativa de una empresa. 
+             Requiere un análisis cuidadoso del retorno esperado, los riesgos asociados y la viabilidad 
+             económica del proyecto. Un presupuesto de inversión bien elaborado permite a las organizaciones
+              crecer de forma sostenible y mantenerse competitivas en el mercado.</p>
+        </div>
+      </div>
+    </section>
+       
+    <section class="presupuesto-estructura">
+          <h2 class="section-title"><i class="fas fa-layer-group"></i> Estructura de un Presupuesto</h2>
+          <div class="accordion">
+            <div class="accordion-item">
+              <button class="accordion-header"><i class="fas fa-coins"></i> Ingresos esperados</button>
+              <div class="accordion-body">
+                <p>Ventas, préstamos, aportes de socios. Representan la entrada de recursos a tu negocio.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-header"><i class="fas fa-home"></i> Gastos fijos</button>
+              <div class="accordion-body">
+                <p>Pagos que no varían: arriendo, servicios públicos, sueldos. Son compromisos constantes.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-header"><i class="fas fa-random"></i> Gastos variables</button>
+              <div class="accordion-body">
+                <p>Insumos, transporte, comisiones. Cambian con la operación del negocio.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-header"><i class="fas fa-piggy-bank"></i> Ahorros e inversiones</button>
+              <div class="accordion-body">
+                <p>Dinero guardado o reinvertido en activos. Clave para el crecimiento sostenible.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-header"><i class="fas fa-chart-line"></i> Resultados esperados</button>
+              <div class="accordion-body">
+                <p>Utilidad o pérdida proyectada. Muestra la viabilidad financiera del presupuesto.</p>
+              </div>
+            </div>
+          </div>
+    </section>
+        
+    
+    <section class="presupuesto-ciclo">
+          <h2 class="section-title"><i class="fas fa-sync-alt"></i> Ciclo Presupuestal y Control</h2>
+          <div class="circle-container">
+            <div class="phase" data-phase="1">1. Planeación</div>
+            <div class="phase" data-phase="2">2. Aprobación</div>
+            <div class="phase" data-phase="3">3. Ejecución</div>
+            <div class="phase" data-phase="4">4. Control</div>
+            <div class="phase" data-phase="5">5. Evaluación</div>
+            <div class="phase" data-phase="6">6. Importancia</div>
+            <div class="center-text">Haz clic en una fase</div>
+          </div>
+          <div class="phase-info" id="phase-info"></div>
+    </section>
+        
+    <section class="flujo-caja">
+        <h2 class="section-title"><i class="fas fa-cash-register"></i> Flujo de Caja Básico</h2>
+        <ul class="list">
+          <li><strong>Ingresos operativos:</strong> ventas, cobros.</li>
+          <li><strong>Egresos operativos:</strong> Pagos denómina, servicios, insumos.</li>
+          <li><strong>Saldo inicial:</strong> dinero con el que se comienza el periodo.</li>
+          <li><strong>Saldo final:</strong> dinero disponible al finalizar.</li>
+          <li><strong>Beneficio:</strong> Ayuda a prever la liquidez y evitar crisis de efectivo.</li>
+        </ul>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/eLWgTsYkXGg?si=Cob-zn0_EFf3aB6q"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+        
+       
+    </section>
+    
+    <section class="plataformas-facturacion">
+        <h2 class="section-title"><i class="fas fa-laptop-code"></i> Plataformas de Facturación y Flujo de Caja</h2>
+        <div class="grid-container">
+          <a href="https://www.siigo.com/" target="_blank" class="grid-item">Siigo</a>
+          <a href="https://www.alegra.com/" target="_blank" class="grid-item">Alegra</a>
+          <a href="https://trello.com/" target="_blank" class="grid-item">Trello + Excel</a>
+          <a href="https://quickbooks.intuit.com/" target="_blank" class="grid-item">QuickBooks</a>
+          <a href="https://www.contifico.com/" target="_blank" class="grid-item">Contifico</a>
+        </div>
+    </section>
+        
+        
+    <section class="actividades-practicas">
+        <h2 class="section-title"><i class="fas fa-tasks"></i> Actividades Prácticas</h2>
+        <div class="task-list">
+          <ul>
+            <li>
+              <input type="checkbox" id="tarea1">
+              <label for="tarea1">Elaborar un presupuesto mensual del negocio.</label>
+            </li>
+            <li>
+              <input type="checkbox" id="tarea2">
+              <label for="tarea2">Simular recortes ante disminución de ingresos.</label>
+            </li>
+            <li>
+              <input type="checkbox" id="tarea3">
+              <label for="tarea3">Analizar desviaciones presupuestales.</label>
+            </li>
+          </ul>
+        </div>
+    </section>
+
+    <section class="herramientas">
+        <h2 class="section-title"><i class="fas fa-wrench"></i> Herramientas</h2>
+        
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/cfkjNQLHsdg?si=3rJKL6dLmUNFUDvP"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+    </section>
+
+    <section class="producto-final">
+        <h2 class="section-title"><i class="fas fa-chart-line"></i> Producto Final</h2>
+        <p>Presupuesto estructurado y ajustado con análisis comparativo.</p>
+      </div>
+    </section>
+  
+    <div class="boton-centro">
+      <a href="/pages/modulos.html" class="btn-ingresar1">Volver al Inicio</a>
+    </div>
+
+  </main>
+
+   <footer class="footer">
+    <div class="footer-column logo-section">
+      <img src="/assets/img/logo.png" alt="Logo Consultorías UNAD" />
+      <p>Apoyamos a estudiantes y emprendedores UNAD en su camino académico y empresarial.</p>
+    </div>
+  
+    <div class="footer-column">
+      <h4>Redes Sociales</h4>
+      <div class="social-icons">
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  
+    <div class="footer-column">
+      <h4>Contáctanos</h4>
+      <p>Email: <a href="mailto:consultoria.unad@gmail.com">consultoria.unad@gmail.com</a></p>
+      <p>Teléfono: <a href="tel:+57453343265">+57 314 543 4194</a></p>
+      <p>Atención: Lun-Vie 8:00am - 5:00pm</p>
+    </div>
+  
+    <div class="footer-column">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Política de privacidad</a></li>
+        <li><a href="#">Términos y condiciones</a></li>
+        <li><a href="#">Accesibilidad</a></li>
+      </ul>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>&copy; 2025 Consultorías UNAD | Todos los derechos reservados.</p>
+    </div>
+  </footer>
+<script src="/js/main.js"></script>
+
+</body>
+</html>
