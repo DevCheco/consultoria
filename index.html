@@ -30,7 +30,7 @@
   <!-- Contenido principal del Hero -->
   <div class="container-hero">
     <div class="hero-texto">
-      <h1>Bienvenido al consultorio virtual de formación Financiera y emprendimiento</h1>
+      <h1>Bienvenido al Consultorio Virtual de Formación Financiera y Emprendimiento</h1>
       <p>
         Construimos estrategias totalmente personalizadas para alcanzar los
         objetivos de tu negocio, basadas en tendencias y análisis de mercado.
@@ -119,15 +119,44 @@
 
   <!--SECCION PREMIUM-->
   <section class="premium-section">
-    <div class="premium-heading">
-      <h1>Diseñado para <span class="highlight-bold">asesorías personalizadas</span> <span class="highlight-color">en tiempo real</span></h1>
-      <div class="premium-tabs">
-        <button>Accede a tu consultoría</button>
-        <button>Recibe orientación profesional</button>
-        <button>Resuelve tus dudas</button>
-        <button>Conecta con un asesor</button>
-      </div>
-    </div>
+   <div class="premium-heading">
+  <h1>Diseñado para <span class="highlight-bold">asesorías personalizadas</span> <span class="highlight-color">en tiempo real</span></h1>
+  <div class="premium-tabs">
+    <button onclick="openModal('consultoria')">Accede a tu consultoría</button>
+    <button onclick="openModal('orientacion')">Recibe orientación profesional</button>
+    <button onclick="openModal('dudas')">Resuelve tus dudas</button>
+    <button onclick="openModal('asesor')">Conecta con un asesor</button>
+  </div>
+</div>
+
+<!-- Modales -->
+<div id="modal-consultoria" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('consultoria')">&times;</span>
+    <p>Accede rapidamente a tu consulta para recibir acompañamiento en tiempo real.</p>
+  </div>
+</div>
+
+<div id="modal-orientacion" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('orientacion')">&times;</span>
+    <p>Recibe orientación profesional adaptada a tus necesidades.</p>
+  </div>
+</div>
+
+<div id="modal-dudas" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('dudas')">&times;</span>
+    <p>Resuelve tus dudas rápidamente con el apoyo de nuestros asesores especializados.</p>
+  </div>
+</div>
+
+<div id="modal-asesor" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('asesor')">&times;</span>
+    <p>Conéctate con un asesor en tiempo real y recibe respuestas inmediatas a tus inquietudes.</p>
+  </div>
+</div>
   
     <div class="premium-content">
       <div class="image-container">
@@ -165,7 +194,7 @@
       <h4>Contáctanos</h4>
       <p>Email: <a href="mailto:consultoria.unad@gmail.com">consultoria.unad@gmail.com</a></p>
       <p>Teléfono: <a href="tel:+57453343265">+57 314 543 4194</a></p>
-      <p>Atención: Lun-Vie 8:00am - 5:00pm</p>
+      <p>Atención: Lun - Vie, 8:00 a.m. a 12:00 m. y de 2:00 p.m. a 5:00 p.m.</p>
     </div>
   
     <div class="footer-column">
@@ -184,6 +213,6 @@
 <!--SCRIPTS-->
 <script src="/js/main.js"></script>  
 <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
-
+<script src="//code.tidio.co/sagohsf1eqdezbgto6ee9mcgub6xbdqt.js" async></script>
 </body>
 </html>

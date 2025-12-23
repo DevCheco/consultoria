@@ -87,19 +87,37 @@
   }
   
   .tarjeta {
-    background-color: var(--light-bg);
-    border-radius: 12px;
-    box-shadow: 0 4px 10px var(--sombra);
-    padding: 1.5rem;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-top: 6px solid var(--dorado-unad);
-  }
-  
-  .tarjeta:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 20px var(--sombra);
-  }
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--sombra);
+  padding: 1.5rem;
+  text-align: center;
+  border-top: 6px solid var(--dorado-unad);
+  height: 300px; /* o lo que necesites */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fondo-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.3; /* para que no opaque el texto */
+}
+
+.tarjeta .contenido {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+ 
+}
+
   
   .tarjeta h3 {
     color: var(--secondary-color);
@@ -419,6 +437,26 @@ main.modulo {
     border: 0;
     border-radius: 12px;
   }
+
+  .video-cita {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  color: black;
+}
+.video-cita p{
+  color: #0077cc;
+}
+
+.video-cita a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.video-cita a:hover {
+  text-decoration: underline;
+}
+
   
   
 
@@ -521,6 +559,7 @@ main.modulo {
     padding: 50px 20px;
     font-family: 'Segoe UI', sans-serif;
   }
+  
   .excel-preview-container {
     display: flex;
     flex-direction: column;
@@ -718,6 +757,23 @@ main.modulo {
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
+
+.imagenes-grid .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imagenes-grid .item p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #333;
+  text-align: center;
+}
+
+
+
+
 
 .infografia {
   width: 50%;
@@ -945,6 +1001,14 @@ main.modulo {
     .contenido-actividad img{
       width: 80%;
     }
+
+    .imagenes-grid {
+    grid-template-columns: 1fr; /* Una sola columna */
+  }
+
+  #manejo-deuda{
+    width: 90%;
+  }
      
   }
 

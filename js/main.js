@@ -20,6 +20,24 @@ window.addEventListener('scroll', toggleScrollReveal);
 window.addEventListener('load', toggleScrollReveal);
 
 
+//modals ventnas seccion preminun index
+function openModal(id) {
+  document.getElementById('modal-' + id).style.display = 'block';
+}
+
+function closeModal(id) {
+  document.getElementById('modal-' + id).style.display = 'none';
+}
+
+// Cerrar si se hace clic fuera del modal
+window.onclick = function(event) {
+  const modals = document.querySelectorAll('.modal');
+  modals.forEach(modal => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+}
 
 
 //modulo 1---modals
@@ -73,9 +91,9 @@ window.addEventListener('load', toggleScrollReveal);
   const descriptions = {
     "1": "📌 Planeación: definición de metas y estimaciones.",
     "2": "✅ Aprobación: validación por parte de la gerencia o socios.",
-    "3": "🚀 Ejecución: implementación del presupuesto en las operaciones.Ejecución: implementación del presupuesto.",
+    "3": "🚀 Ejecución: implementación del presupuesto en las operaciones.",
     "4": "📊 Control y seguimiento: comparación entre lo presupuestado y lo real.",
-    "5": "🔁 Evaluación y ajuste: identificar desviaciones y corregir proyecciones..",
+    "5": "🔁 Evaluación y ajuste: identificar desviaciones y corregir proyecciones.",
     "6": "💡 Importancia del control: Permite tomar decisiones correctivas y garantizar sostenibilidad financiera."
   };
 
